@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
 import { ButtonContainer } from "./Button";
-import { detailProduct } from "../data";
+
 export default class Details extends Component {
   render() {
     return (
@@ -56,6 +56,7 @@ export default class Details extends Component {
                       disabled={inCart ? true : false}
                       onClick={() => {
                         value.addToCart(id);
+                        value.openModal(id);
                       }}
                     >
                       {inCart ? "inCart" : "add to cart"}
